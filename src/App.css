@@ -1,1 +1,28 @@
+.main {
 
+    background: rgb(253, 187, 45);
+    background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%);
+    height: 100vh;
+    text-align: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card-grid-container {
+    /* border: 1px solid #DEDEDE; */
+    padding: 12px;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    /* box-shadow: 0 0 6px 6px #DEDEDE; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    justify-items: center;
+    gap: 1rem;
+}
