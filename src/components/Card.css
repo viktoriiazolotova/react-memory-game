@@ -1,8 +1,13 @@
-.card {
+.card-image {
     border-radius: 10px;
     box-shadow: 2px 2px 4px 4px #DEDEDE;
-    /* transition: 0.3s; */
-    /* transform-style: preserve-3d; */
-    /* position: relative; */
     cursor: pointer;
+    width: 150px;
+    height: 150px;
+
+}
+
+.card-image:hover {
+    scale: 105%;
+
 }

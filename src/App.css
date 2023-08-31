@@ -1,28 +1,62 @@
-.main {
+ body {
+     background: rgb(253, 187, 45);
+     background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%);
+     height: 100vh;
+     margin-top: 6%;
+ }
 
-    background: rgb(253, 187, 45);
-    background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%);
-    height: 100vh;
-    text-align: center;
-    align-items: center;
-}
+ h1 {
+     font-size: 2rem;
+     font-weight: 800;
+ }
 
-.main-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+ p {
+     font-size: 1.2rem;
+ }
 
-}
+ .main-page {
+     text-align: center;
+     align-items: center;
+ }
 
-.card-grid-container {
-    /* border: 1px solid #DEDEDE; */
-    padding: 12px;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-    /* box-shadow: 0 0 6px 6px #DEDEDE; */
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    justify-items: center;
-    gap: 1rem;
-}
+ .main-container {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .card-grid-container {
+     /* border: 1px solid #DEDEDE; */
+     /* box-shadow: 0 0 6px 6px #DEDEDE; */
+     padding: 12px;
+     margin-top: 1rem;
+     margin-bottom: 3rem;
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     grid-template-rows: repeat(4, 1fr);
+     justify-items: center;
+     gap: 1rem;
+ }
+
+ .new-game-button {
+     background-color: hsl(214, 86%, 70%);
+     color: white;
+     padding: 8px 16px 10px;
+     display: flex;
+     align-items: center;
+     justify-content: space-around;
+     margin: 1rem auto 1rem;
+     font-weight: bold;
+     font-size: 1rem;
+     border: 0;
+     border-radius: 10px;
+     transition: 0.2s all ease-in;
+     border: 2px solid hwb(253 35% 16%);
+     width: 150px;
+ }
+
+ .new-game-button:hover {
+     background-color: transparent;
+     border: 2px solid white;
+     scale: 105%;
+ }
