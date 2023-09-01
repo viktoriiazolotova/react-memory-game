@@ -11,3 +11,7 @@
     scale: 105%;
 
 }
+
+.hidden {
+    display: none;
+}
