@@ -1,36 +1,38 @@
 import React from 'react'
-
 import PropTypes from 'prop-types'
 import cover from '../assets/pink-green-drops.jpg'
 import './Card.css'
 
-const Card = ({ alt, id, flipped, src, handleCardClick }) => {
+const Card = ({ card, handleSelection, flipped }) => {
     const handleClick = () => {
-        if (!flipped) {
-            console.log('id', id)
-            handleCardClick(id) // Notify the parent component that the card was clicked
-        }
+        handleSelection(card)
     }
+
     return (
-        <div>
-            <div
-                className={`front-side ${flipped ? 'hidden' : ''}`}
-                onClick={handleClick}
-            >
-                <img className="card-image" src={cover} alt="cover"></img>
-            </div>
-            <div className={`back-side ${flipped ? '' : 'hidden'}`}>
-                <img className="card-image" src={src} alt={alt}></img>
+        <div className="card">
+            <div className={`${flipped ? 'flipped' : ''}`}>
+                <img
+                    className="card-image front"
+                    src={card.src}
+                    alt={card.alt}
+                ></img>
+                <img
+                    className="card-image back"
+                    src={cover}
+                    alt="cover"
+                    onClick={handleClick}
+                ></img>
             </div>
         </div>
     )
 }
 
 Card.propTypes = {
-    id: PropTypes.number.isRequired,
-    alt: PropTypes.string.isRequired,
+    card: PropTypes.shape({
+        alt: PropTypes.string.isRequired,
+        src: PropTypes.string.isRequired,
+    }).isRequired,
     flipped: PropTypes.bool.isRequired,
-    src: PropTypes.string.isRequired,
-    handleCardClick: PropTypes.func,
+    handleSelection: PropTypes.func.isRequired,
 }
 export default Card

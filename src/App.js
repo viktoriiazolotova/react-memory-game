@@ -4,79 +4,64 @@ import Card from './components/Card'
 import Footer from './components/Footer'
 import { items } from './cardsData'
 
-// import cover from './assets/pink-green-drops.jpg'
 import './App.css'
 
 const App = () => {
     const [cards, setCards] = useState(null)
-    // const [openCards, setOpenCards] = useState([]) // Maintain a state for open cards
+    const [firstSelected, setFirstSelected] = useState(null)
+    const [secondSelected, setSecondSelected] = useState(null)
 
-    const resetCards = () => {
-        // create copy of items array and assign new ids
-        const itemsCopy = items.map((item, id) => ({
-            ...item,
-            id: id + items.length + 1,
-        }))
-        // console.log('items before shuffle', itemsCopy)
-        const allItems = [...items, ...itemsCopy]
-        console.log('items before shuffle', allItems)
-        const shuffled = allItems.sort(() => Math.random() - 0.5)
+    // const [openCards, setOpenCards] = useState([])
+    // const [machedCards, setMachedCards] = useState({})
 
-        console.log('shuffled', shuffled)
-        setCards(shuffled)
+    const shuffleCards = () => {
+        const shuffledCards = [...items, ...items]
+            .sort(() => Math.random() - 0.5)
+            .map((card) => ({
+                ...card,
+                id: Math.random() * 10,
+            }))
+        setCards(shuffledCards)
+        console.log(shuffledCards)
     }
 
     useEffect(() => {
-        resetCards()
+        shuffleCards()
     }, [])
 
-    const handleNewGameClick = () => {
-        console.log('click on start game')
-        resetCards()
+    const handleSelection = (card) => {
+        firstSelected ? setSecondSelected(card) : setFirstSelected(card)
     }
 
-    // const handleCardClick = () => {
-    //     console.log('card is clicked')
-    //     // todo
-    // }
+    useEffect(() => {
+        if (firstSelected && secondSelected) {
+            if (firstSelected.src === secondSelected.src) {
+                const updatedCards = cards.map((card) => {
+                    if (card.src === firstSelected.src) {
+                        return { ...card, matchFound: true }
+                    }
+                    return card
+                })
 
-    // const handleCardClick = (id) => {
-    //     const clickedCard = cards.find((card) => card.id === id)
-    //     console.log('clicked card', clickedCard)
-
-    //     if (clickedCard) {
-    //         const alreadyOpen = openCards.some((card) => card.id === id)
-
-    //         if (!alreadyOpen) {
-    //             const newOpenCards = [...openCards, clickedCard]
-
-    //             setOpenCards(newOpenCards)
-
-    //             if (newOpenCards.length === 2) {
-    //                 // Check for a match
-    //                 if (newOpenCards[0].src === newOpenCards[1].src) {
-    //                     // Handle a match (e.g., increment the match count, disable the cards)
-    //                     // You can implement this logic here
-    //                 } else {
-    //                     // No match, so flip the cards back
-    //                     setTimeout(() => {
-    //                         setOpenCards([])
-    //                     }, 1000) // Adjust the delay as needed
-    //                 }
-    //             }
-    //         }
-    // }
-    // }
-    const handleCardClick = (id) => {
-        const updatedCards = cards.map((card) => {
-            if (card.id === id && !card.flipped) {
-                return { ...card, flipped: true }
+                setCards(updatedCards)
+                resetSelections()
+            } else {
+                setTimeout(() => resetSelections(), 2000)
             }
-            return card
-        })
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [firstSelected, secondSelected])
 
-        setCards(updatedCards)
-        console.log(cards)
+    const resetSelections = () => {
+        setFirstSelected(null)
+        setSecondSelected(null)
+        console.log('updated cards after', cards)
+    }
+
+    const checkIsFlipped = (card) => {
+        return (
+            card === firstSelected || card === secondSelected || card.matchFound
+        )
     }
 
     return (
@@ -85,27 +70,20 @@ const App = () => {
             <p> Welcome to Kitty Wonderland, a card maching game! </p>
 
             <div>
-                <button
-                    className="new-game-button"
-                    onClick={handleNewGameClick}
-                >
+                <button className="new-game-button" onClick={shuffleCards}>
                     <BiPlayCircle size={20} /> Start Game
                 </button>
                 <div className="main-container">
                     <div className="card-grid-container">
                         {cards &&
-                            Object.values(cards).map(
-                                ({ id, src, alt, flipped }) => (
-                                    <Card
-                                        key={id}
-                                        id={id}
-                                        src={src}
-                                        alt={alt}
-                                        flipped={flipped}
-                                        handleCardClick={handleCardClick}
-                                    ></Card>
-                                ),
-                            )}
+                            Object.values(cards).map((card) => (
+                                <Card
+                                    key={card.id}
+                                    card={card}
+                                    flipped={checkIsFlipped(card)}
+                                    handleSelection={handleSelection}
+                                ></Card>
+                            ))}
                     </div>
                 </div>
                 <div>
