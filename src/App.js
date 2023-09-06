@@ -3,6 +3,7 @@ import { BiPlayCircle } from 'react-icons/bi'
 import Card from './components/Card'
 import Footer from './components/Footer'
 import { items } from './cardsData'
+import { launchConfetti } from './components/Confetti'
 
 import './App.css'
 
@@ -10,18 +11,18 @@ const App = () => {
     const [cards, setCards] = useState(null)
     const [firstSelected, setFirstSelected] = useState(null)
     const [secondSelected, setSecondSelected] = useState(null)
-
-    // const [openCards, setOpenCards] = useState([])
-    // const [machedCards, setMachedCards] = useState({})
+    const [matchCount, setMatchCount] = useState(0)
+    const [disabled, setDisabled] = useState(false)
 
     const shuffleCards = () => {
         const shuffledCards = [...items, ...items]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({
                 ...card,
-                id: Math.random() * 10,
+                id: Math.round(Math.random() * 10000),
             }))
         setCards(shuffledCards)
+        setMatchCount(0)
         console.log(shuffledCards)
     }
 
@@ -35,6 +36,7 @@ const App = () => {
 
     useEffect(() => {
         if (firstSelected && secondSelected) {
+            setDisabled(true)
             if (firstSelected.src === secondSelected.src) {
                 const updatedCards = cards.map((card) => {
                     if (card.src === firstSelected.src) {
@@ -42,11 +44,12 @@ const App = () => {
                     }
                     return card
                 })
-
+                setMatchCount(matchCount + 1)
+                checkForCompletion()
                 setCards(updatedCards)
                 resetSelections()
             } else {
-                setTimeout(() => resetSelections(), 2000)
+                setTimeout(() => resetSelections(), 1000)
             }
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -55,7 +58,7 @@ const App = () => {
     const resetSelections = () => {
         setFirstSelected(null)
         setSecondSelected(null)
-        console.log('updated cards after', cards)
+        setDisabled(false)
     }
 
     const checkIsFlipped = (card) => {
@@ -63,6 +66,17 @@ const App = () => {
             card === firstSelected || card === secondSelected || card.matchFound
         )
     }
+
+    const checkForCompletion = () => {
+        if (cards && matchCount === cards.length / 2) {
+            console.log('you won')
+            launchConfetti()
+        }
+    }
+    useEffect(() => {
+        checkForCompletion()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [matchCount])
 
     return (
         <div className="main-page">
@@ -81,6 +95,7 @@ const App = () => {
                                     key={card.id}
                                     card={card}
                                     flipped={checkIsFlipped(card)}
+                                    disabled={disabled}
                                     handleSelection={handleSelection}
                                 ></Card>
                             ))}
@@ -88,7 +103,7 @@ const App = () => {
                 </div>
                 <div>
                     <p>
-                        Matches found: <span>0</span>
+                        Matches found: <span>{matchCount}</span>
                     </p>
                 </div>
             </div>

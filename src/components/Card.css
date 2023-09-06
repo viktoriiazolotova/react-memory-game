@@ -19,11 +19,6 @@
 
 }
 
-.card-image:hover {
-    scale: 105%;
-
-}
-
 .card .front {
     transform: rotateY(90deg);
     transition: all ease-in 0.2s;

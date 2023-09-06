@@ -1,58 +1,42 @@
-import cat1 from './assets/cats/cat1.png'
-import cat2 from './assets/cats/cat2.png'
-import cat3 from './assets/cats/cat3.png'
-import cat4 from './assets/cats/cat4.png'
-import cat5 from './assets/cats/cat5.png'
-import cat6 from './assets/cats/cat6.png'
-import cat7 from './assets/cats/cat7.png'
-import cat8 from './assets/cats/cat8.png'
 export const items = [
     {
-        src: cat1,
+        src: require('./assets/cats/cat1.png'),
         alt: 'cat1',
         matchFound: false,
-        flipped: false,
     },
     {
-        src: cat2,
+        src: require('./assets/cats/cat2.png'),
         alt: 'cat2',
         matchFound: false,
-        flipped: false,
     },
     {
-        src: cat3,
+        src: require('./assets/cats/cat3.png'),
         alt: 'cat3',
         matchFound: false,
-        flipped: false,
     },
     {
-        src: cat4,
+        src: require('./assets/cats/cat4.png'),
         alt: 'cat4',
         matchFound: false,
-        flipped: false,
     },
     {
-        src: cat5,
+        src: require('./assets/cats/cat5.png'),
         alt: 'cat5',
         matchFound: false,
-        flipped: false,
     },
     {
-        src: cat6,
+        src: require('./assets/cats/cat6.png'),
         alt: 'cat6',
         matchFound: false,
-        flipped: false,
     },
     {
-        src: cat7,
+        src: require('./assets/cats/cat7.png'),
         alt: 'cat7',
         matchFound: false,
-        flipped: false,
     },
     {
-        src: cat8,
+        src: require('./assets/cats/cat8.png'),
         alt: 'cat8',
         matchFound: false,
-        flipped: false,
     },
 ]

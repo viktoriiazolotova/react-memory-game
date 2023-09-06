@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import cover from '../assets/pink-green-drops.jpg'
 import './Card.css'
 
-const Card = ({ card, handleSelection, flipped }) => {
+const Card = ({ card, handleSelection, flipped, disabled }) => {
     const handleClick = () => {
-        handleSelection(card)
+        if (!disabled) {
+            handleSelection(card)
+        }
     }
 
     return (
@@ -17,7 +19,7 @@ const Card = ({ card, handleSelection, flipped }) => {
                     alt={card.alt}
                 ></img>
                 <img
-                    className="card-image back"
+                    className="card-image back "
                     src={cover}
                     alt="cover"
                     onClick={handleClick}
