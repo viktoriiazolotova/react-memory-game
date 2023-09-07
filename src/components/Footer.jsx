@@ -7,7 +7,7 @@ const Footer = () => {
             <a href="https://www.freepik.com/" target="_blank" rel="noreferrer">
                 Images
             </a>
-            by catalyststuff on Freepik
+            <span>by catalyststuff on Freepik</span>
         </div>
     )
 }
