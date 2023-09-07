@@ -15,11 +15,12 @@ const App = () => {
     const [disabled, setDisabled] = useState(false)
 
     const shuffleCards = () => {
+        let i = 1
         const shuffledCards = [...items, ...items]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({
                 ...card,
-                id: Math.round(Math.random() * 10000),
+                id: i++,
             }))
         setCards(shuffledCards)
         setMatchCount(0)
@@ -81,7 +82,7 @@ const App = () => {
     return (
         <div className="main-page">
             <h1>Kitty Wonderland </h1>
-            <p> Welcome to Kitty Wonderland, a card maching game! </p>
+            <p> Welcome to Kitty Wonderland, a maching kitten pairs game! </p>
 
             <div>
                 <button className="new-game-button" onClick={shuffleCards}>

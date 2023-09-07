@@ -35,6 +35,7 @@ Card.propTypes = {
         src: PropTypes.string.isRequired,
     }).isRequired,
     flipped: PropTypes.bool.isRequired,
+    disabled: PropTypes.bool.isRequired,
     handleSelection: PropTypes.func.isRequired,
 }
 export default Card
