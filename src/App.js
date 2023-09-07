@@ -13,6 +13,7 @@ const App = () => {
     const [secondSelected, setSecondSelected] = useState(null)
     const [matchCount, setMatchCount] = useState(0)
     const [disabled, setDisabled] = useState(false)
+    const [moves, setMoves] = useState(0)
 
     const shuffleCards = () => {
         let i = 1
@@ -24,6 +25,7 @@ const App = () => {
             }))
         setCards(shuffledCards)
         setMatchCount(0)
+        setMoves(0)
         console.log(shuffledCards)
     }
 
@@ -33,6 +35,7 @@ const App = () => {
 
     const handleSelection = (card) => {
         firstSelected ? setSecondSelected(card) : setFirstSelected(card)
+        setMoves(moves + 1)
     }
 
     useEffect(() => {
@@ -102,9 +105,13 @@ const App = () => {
                             ))}
                     </div>
                 </div>
-                <div>
+                <div className="score">
                     <p>
-                        Matches found: <span>{matchCount}</span>
+                        MATCHES FOUND:
+                        <span>{matchCount}</span>
+                    </p>
+                    <p>
+                        MOVES:<span>{moves}</span>
                     </p>
                 </div>
             </div>

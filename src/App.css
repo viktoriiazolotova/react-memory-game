@@ -59,3 +59,25 @@
      border: 2px solid white;
      scale: 105%;
  }
+
+ .score {
+     font-weight: 700;
+     font-size: 1rem;
+ }
+
+ span {
+     padding-left: 1%;
+ }
+
+ @media (max-width: 768px) {
+     .card-image {
+         width: 100px;
+         height: 100px;
+
+     }
+
+     .score {
+         font-weight: 700;
+         font-size: 0.8rem;
+     }
+ }

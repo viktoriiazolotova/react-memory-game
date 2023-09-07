@@ -5,6 +5,7 @@ import './Card.css'
 
 const Card = ({ card, handleSelection, flipped, disabled }) => {
     const handleClick = () => {
+        console.log('this is called')
         if (!disabled) {
             handleSelection(card)
         }
