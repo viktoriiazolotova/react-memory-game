@@ -1,3 +1,13 @@
 .footer {
     padding-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.footer p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.icon-cat {
+    color: #572EEA;
 }

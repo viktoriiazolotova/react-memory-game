@@ -92,7 +92,10 @@ const App = () => {
             <p className="techstack">
                 Powered by React, Netlify, GitHub and Freepik
             </p>
-
+            {/* <a href="https://www.freepik.com/" target="_blank" rel="noreferrer">
+                Images
+            </a> */}
+            {/* <span>by catalyststuff on Freepik</span> */}
             <div>
                 <Button shuffleCards={shuffleCards}></Button>
                 <div className="main-container">
