@@ -1,0 +1,21 @@
+.new-game-button {
+    background-color: #572EEA;
+    color: white;
+    padding: 8px 16px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem auto 0.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: 0.2s all ease-in;
+    border: 2px solid hwb(253 35% 16%);
+    width: 150px;
+}
+
+.new-game-button:hover {
+    background-color: transparent;
+    border: 2px solid white;
+    scale: 105%;
+}

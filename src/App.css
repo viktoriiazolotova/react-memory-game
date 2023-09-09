@@ -1,6 +1,11 @@
- body {
-     background: rgb(253, 187, 45);
+ html {
+     /* background: rgb(253, 187, 45); */
      background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%);
+ }
+
+ body {
+     /* background: rgb(253, 187, 45);
+     background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%); */
      height: 100%;
      margin-top: 6%;
  }
@@ -13,6 +18,12 @@
  p {
      font-size: 1.2rem;
      font-weight: 500;
+ }
+
+ .techstack {
+     font-size: 1rem;
+     font-weight: 500;
+     margin-bottom: 4%;
  }
 
  .main-page {
@@ -35,29 +46,6 @@
      grid-template-rows: repeat(4, 1fr);
      justify-items: center;
      gap: 1rem;
- }
-
- .new-game-button {
-     background-color: #572EEA;
-     color: white;
-     padding: 8px 16px 10px;
-     display: flex;
-     align-items: center;
-     justify-content: space-around;
-     margin: 1rem auto 1rem;
-     font-weight: bold;
-     font-size: 1rem;
-     border: 0;
-     border-radius: 10px;
-     transition: 0.2s all ease-in;
-     border: 2px solid hwb(253 35% 16%);
-     width: 150px;
- }
-
- .new-game-button:hover {
-     background-color: transparent;
-     border: 2px solid white;
-     scale: 105%;
  }
 
  .score {

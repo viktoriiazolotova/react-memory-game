@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { BiPlayCircle } from 'react-icons/bi'
 import Card from './components/Card'
 import Footer from './components/Footer'
 import { items } from './cardsData'
 import { launchConfetti } from './components/Confetti'
 
 import './App.css'
+import Button from './components/Button'
 
 const App = () => {
     const [cards, setCards] = useState(null)
@@ -35,11 +35,11 @@ const App = () => {
 
     const handleSelection = (card) => {
         firstSelected ? setSecondSelected(card) : setFirstSelected(card)
-        setMoves(moves + 1)
     }
 
     useEffect(() => {
         if (firstSelected && secondSelected) {
+            setMoves(moves + 1)
             setDisabled(true)
             if (firstSelected.src === secondSelected.src) {
                 const updatedCards = cards.map((card) => {
@@ -73,7 +73,6 @@ const App = () => {
 
     const checkForCompletion = () => {
         if (cards && matchCount === cards.length / 2) {
-            console.log('you won')
             launchConfetti()
         }
     }
@@ -85,12 +84,13 @@ const App = () => {
     return (
         <div className="main-page">
             <h1>Kitty Wonderland </h1>
-            <p> Welcome to Kitty Wonderland, a maching kitten pairs game! </p>
+            <p>Welcome to Kitty Wonderland, a maching kitten pairs game!</p>
+            <p className="techstack">
+                Powered by React, Netlify, GitHub and Freepik
+            </p>
 
             <div>
-                <button className="new-game-button" onClick={shuffleCards}>
-                    <BiPlayCircle size={20} /> Start Game
-                </button>
+                <Button shuffleCards={shuffleCards}></Button>
                 <div className="main-container">
                     <div className="card-grid-container">
                         {cards &&
