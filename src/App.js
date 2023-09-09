@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Card from './components/Card'
 import Footer from './components/Footer'
 import { items } from './cardsData'
+import { getRandomItemsFromArray } from './utils/helperFunctions'
 import { launchConfetti } from './components/Confetti'
 
 import './App.css'
@@ -15,9 +16,11 @@ const App = () => {
     const [disabled, setDisabled] = useState(false)
     const [moves, setMoves] = useState(0)
 
+    const randomItems = getRandomItemsFromArray(items, 8)
+
     const shuffleCards = () => {
         let i = 1
-        const shuffledCards = [...items, ...items]
+        const shuffledCards = [...randomItems, ...randomItems]
             .sort(() => Math.random() - 0.5)
             .map((card) => ({
                 ...card,
@@ -31,6 +34,7 @@ const App = () => {
 
     useEffect(() => {
         shuffleCards()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const handleSelection = (card) => {
