@@ -6,10 +6,9 @@ const Footer = () => {
     return (
         <div className="footer">
             <p>
-                Build with 💙 and with
-                {<FaCat size={20} className="icon-cat" />} by Viktoriia Zolotova
-                2023
+                Build with 💙 ,{<FaCat size={15} className="icon-cat" />} & ☕️
             </p>
+            <p>Viktoriia Zolotova 2023</p>
         </div>
     )
 }
