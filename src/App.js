@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react'
 import Card from './components/Card'
 import Footer from './components/Footer'
+// import { BiLogoReact } from 'react-icons/bi'
+// import { FaGithub } from 'react-icons/fa'
+// // import { SiFreepik } from 'react-icons/si'
+// import { SiNetlify } from 'react-icons/si'
 import { items } from './cardsData'
 import { getRandomItemsFromArray } from './utils/helperFunctions'
 import { launchConfetti } from './components/Confetti'
 
 import './App.css'
 import Button from './components/Button'
+import TechStack from './components/TechStack'
 
 const App = () => {
     const [cards, setCards] = useState(null)
@@ -89,9 +94,17 @@ const App = () => {
         <div className="main-page">
             <h1>Kitty Wonderland </h1>
             <p>Welcome to Kitty Wonderland, a maching kitten pairs game!</p>
-            <p className="techstack">
-                Powered by React, Netlify, GitHub and Freepik
-            </p>
+            <TechStack />
+            {/* <div className="techstack">
+                Powered by <BiLogoReact size={20} className="tech-icon" />{' '}
+                React,
+                <a href="https://www.netlify.com">
+                    {' '}
+                    <SiNetlify size={20} className="tech-icon" />{' '}
+                </a>{' '}
+                Netlify, <FaGithub size={20} className="tech-icon" /> GitHub and
+                Freepik
+            </div> */}
             {/* <a href="https://www.freepik.com/" target="_blank" rel="noreferrer">
                 Images
             </a> */}

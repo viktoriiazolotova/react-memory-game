@@ -1,5 +1,5 @@
  html {
-     /* background: rgb(253, 187, 45); */
+     background: rgb(253, 187, 45);
      background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%);
  }
 
@@ -13,17 +13,12 @@
  h1 {
      font-size: 2rem;
      font-weight: 800;
+     color: #572EEA;
  }
 
  p {
      font-size: 1.2rem;
-     font-weight: 500;
- }
-
- .techstack {
-     font-size: 1rem;
-     font-weight: 500;
-     margin-bottom: 4%;
+     font-weight: 600;
  }
 
  .main-page {

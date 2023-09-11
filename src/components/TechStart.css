@@ -1,0 +1,19 @@
+.techstack {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 4%;
+    display: flex;
+    justify-content: center;
+}
+
+.tech-icon {
+    text-decoration: none;
+    color: #572EEA;
+    margin: 0 5px 0px 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.tech-icon:hover {
+    color: white;
+}
