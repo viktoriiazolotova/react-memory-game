@@ -50,18 +50,20 @@ const TechStack = () => {
 
     return (
         <div className="techstack">
-            Powered by
-            {links.map(({ id, child, href }) => (
-                <a
-                    key={id}
-                    className="tech-icon"
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    {child}
-                </a>
-            ))}
+            <>
+                Powered by
+                {links.map(({ id, child, href }) => (
+                    <a
+                        key={id}
+                        className="tech-icon"
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {child}
+                    </a>
+                ))}
+            </>
         </div>
     )
 }

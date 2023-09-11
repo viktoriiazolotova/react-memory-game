@@ -1,7 +1,8 @@
 .techstack {
     font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 4%;
+    margin-bottom: 3%;
+    margin-top: 4%;
     display: flex;
     justify-content: center;
 }
@@ -9,9 +10,10 @@
 .tech-icon {
     text-decoration: none;
     color: #572EEA;
-    margin: 0 5px 0px 5px;
+    margin: 0 0.6% 0px 0.8%;
     display: flex;
     justify-content: center;
+    font-weight: 700;
 }
 
 .tech-icon:hover {
