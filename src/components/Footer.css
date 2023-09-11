@@ -1,13 +1,19 @@
 .footer {
     padding-bottom: 2rem;
     margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .footer p {
     font-size: 1rem;
     font-weight: 600;
+    text-decoration: none;
+    color: black;
+    padding-right: 1rem;
 }
 
-.icon-cat {
-    color: #572EEA;
+.footer-link:hover {
+    color: white;
 }

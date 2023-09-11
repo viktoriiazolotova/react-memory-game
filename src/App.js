@@ -120,10 +120,10 @@ const App = () => {
                 </div>
                 <div className="score">
                     <div>
-                        <span>MATCHES FOUND: {matchCount}</span>
-                        <span className="moves"> MOVES: {moves}</span>
+                        <span>Matches Found: {matchCount}</span>
+                        <span className="moves"> Moves: {moves}</span>
                         <span>
-                            BEST SCORE: {localStorage.getItem('bestScore')}
+                            Best Score: {localStorage.getItem('bestScore')}
                         </span>
                     </div>
                 </div>

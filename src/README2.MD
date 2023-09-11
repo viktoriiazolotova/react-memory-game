@@ -12,12 +12,12 @@ In this case, we avoid multi rendering of cards each time when single card is fl
 3. DONE: Update Footer
 4. DONE: Add function to select 8 random cards from array of cards making game different each time 
 5. DONE: Add functionality to update icon on button on hover 
-6. DONE: Add stack icons, links (except freepik - react icon -not working)
-7. Add title with outlines
+6. DONE: Add stack icons, links (except freepik - react icon -not working) 
 8. DONE: Add best score with memory for each user
-9. Add credits for each card and for confetti
-10. Check accessibility by using WAVE
-11. Testing
+9. Add title with outlines
+10. Add credits for each card and for confetti
+11. Check accessibility by using WAVE
+12. Testing
     
 
 ## BUGS:
