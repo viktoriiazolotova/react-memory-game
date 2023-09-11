@@ -4,8 +4,8 @@
  }
 
  body {
-     /* background: rgb(253, 187, 45);
-     background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%); */
+     background: rgb(253, 187, 45);
+     background: linear-gradient(0deg, rgba(253, 187, 45, 1) 0%, rgba(34, 193, 195, 1) 46%);
      height: 100%;
      margin-top: 6%;
  }
@@ -51,6 +51,7 @@
 
  span {
      padding-left: 1%;
+     padding-right: 2%;
  }
 
  @media (max-width: 768px) {

@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react'
 import Card from './components/Card'
 import Footer from './components/Footer'
-// import { BiLogoReact } from 'react-icons/bi'
-// import { FaGithub } from 'react-icons/fa'
-// // import { SiFreepik } from 'react-icons/si'
-// import { SiNetlify } from 'react-icons/si'
 import { items } from './cardsData'
 import { getRandomItemsFromArray } from './utils/helperFunctions'
 import { launchConfetti } from './components/Confetti'
@@ -20,6 +16,10 @@ const App = () => {
     const [matchCount, setMatchCount] = useState(0)
     const [disabled, setDisabled] = useState(false)
     const [moves, setMoves] = useState(0)
+    const [bestScore, setBestScore] = useState(
+        JSON.parse(localStorage.getItem('bestScore')) ||
+            Number.POSITIVE_INFINITY,
+    )
 
     const randomItems = getRandomItemsFromArray(items, 8)
 
@@ -80,8 +80,15 @@ const App = () => {
         )
     }
 
+    const checkBestScore = () => {
+        const highScore = Math.min(moves, bestScore)
+        setBestScore(highScore)
+        localStorage.setItem('bestScore', JSON.stringify(highScore))
+    }
+
     const checkForCompletion = () => {
         if (cards && matchCount === cards.length / 2) {
+            checkBestScore()
             launchConfetti()
         }
     }
@@ -95,20 +102,6 @@ const App = () => {
             <h1>Kitty Wonderland </h1>
             <p>Welcome to Kitty Wonderland, a maching kitten pairs game!</p>
             <TechStack />
-            {/* <div className="techstack">
-                Powered by <BiLogoReact size={20} className="tech-icon" />{' '}
-                React,
-                <a href="https://www.netlify.com">
-                    {' '}
-                    <SiNetlify size={20} className="tech-icon" />{' '}
-                </a>{' '}
-                Netlify, <FaGithub size={20} className="tech-icon" /> GitHub and
-                Freepik
-            </div> */}
-            {/* <a href="https://www.freepik.com/" target="_blank" rel="noreferrer">
-                Images
-            </a> */}
-            {/* <span>by catalyststuff on Freepik</span> */}
             <div>
                 <Button shuffleCards={shuffleCards}></Button>
                 <div className="main-container">
@@ -126,16 +119,15 @@ const App = () => {
                     </div>
                 </div>
                 <div className="score">
-                    <p>
-                        MATCHES FOUND:
-                        <span>{matchCount}</span>
-                    </p>
-                    <p>
-                        MOVES:<span>{moves}</span>
-                    </p>
+                    <div>
+                        <span>MATCHES FOUND: {matchCount}</span>
+                        <span className="moves"> MOVES: {moves}</span>
+                        <span>
+                            BEST SCORE: {localStorage.getItem('bestScore')}
+                        </span>
+                    </div>
                 </div>
             </div>
-
             <Footer> </Footer>
         </div>
     )

@@ -37,7 +37,7 @@ const TechStack = () => {
             href: 'https://github.com/viktoriiazolotova/react-memory-game',
         },
         {
-            id: 3,
+            id: 4,
             child: (
                 <>
                     {/* <SiFreepik size={20} className="tech-icon" /> */}
