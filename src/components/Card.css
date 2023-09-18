@@ -3,7 +3,9 @@
 }
 
 .card img {
-    width: 100%;
+    /* width: 100%; */
+    width: 150px;
+    height: 150px;
     display: block;
     border: 2px solid #fff;
     border-radius: 6px;
@@ -38,4 +40,14 @@
 .flipped .back {
     transform: rotateY(90deg);
     transition-delay: 0s;
+}
+
+@media (max-width: 768px) {
+    .card img {
+        width: 80px;
+        height: 80px;
+
+    }
+
+
 }
