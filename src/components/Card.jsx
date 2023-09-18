@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import cover from '../assets/pink-green-drops.jpg'
+import cover from '../assets/pink-green-orange-drops-pattern.avif'
 import './Card.css'
 
 const Card = ({ card, handleSelection, flipped, disabled }) => {
@@ -22,7 +22,7 @@ const Card = ({ card, handleSelection, flipped, disabled }) => {
                 <img
                     className="card-image back "
                     src={cover}
-                    alt="cover"
+                    alt="pink greenorange drops pattern cover"
                     onClick={handleClick}
                 ></img>
             </div>
