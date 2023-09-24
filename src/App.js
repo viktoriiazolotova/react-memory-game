@@ -100,7 +100,7 @@ const App = () => {
     return (
         <div className="main-page">
             <h1>Kitty Wonderland </h1>
-            <p>Welcome to Kitty Wonderland, a maching kitten pairs game!</p>
+            <p>Welcome to Kitty Wonderland, a matching kitten pairs game!</p>
             <TechStack />
             <div>
                 <Button shuffleCards={shuffleCards}></Button>
