@@ -16,7 +16,7 @@ In this case, we avoid multi rendering of cards each time when single card is fl
 8. DONE: Add best score with memory for each user
 9. Add title with outlines
 10. Add credits for each card and for confetti
-11. Check accessibility by using WAVE
+11. DONE: Check accessibility by using WAVE
 12. Testing
     
 
