@@ -37,27 +37,30 @@ To try out Kitty Wonderland, follow these simple steps:
     ```bash
     cd kitty-wonderland
 
-3.Install the necessary dependencies:
- ```bash
-    npm install
+3. Install the necessary dependencies:
+     ```bash
+     npm install
 
 4. Start the game:
-
- ```bash
-npm start
+     ```bash
+     npm start
 
 ## Usage
+
 Click on cards to flip them and find matching pairs.
 Test and enhance your memory skills while enjoying the cute kitten-themed cards.
 Challenge your friends and family to beat your high score.
 
 ## Feedback
+
 We are continuously working on improving performance and accessibility, especially for Safari users. Your feedback is valuable and can help us make Kitty Wonderland even better. Please don't hesitate to reach out with any suggestions or issues.
 
 ## Contributing
+
 We welcome contributions from the community to make Kitty Wonderland more enjoyable and accessible for everyone. If you'd like to contribute, please follow our contribution guidelines.
 
 ## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Note: Enjoy your time in Kitty Wonderland, and have fun enhancing your memory skills!
