@@ -1,9 +1,9 @@
 ## CHALLENGES:
 1. Understanding when is better implement flipped state for each card (on card level or app level).
 Decided to implement on app by adding additional promp to the card and not add to card object.
-In this case, we avoid multi rendering of cards each time when single card is flipped.
+In this case, we avoid multirendering of cards each time when single card is flipped.
 2. Implemeting flipping effect with CSS for card on click
-3. Implememnting local storage (needed to clear cashe, otherwise was giving an error can not parse NaN)
+3. Implementing local storage (needed to clear cashe, otherwise was giving an error can not parse NaN)
 
 
 ## Tasks to finish:
@@ -20,7 +20,7 @@ In this case, we avoid multi rendering of cards each time when single card is fl
 12. Testing
     
 
-## BUGS:
+## BUGS/ISSUES:
 1. Sometimes when loading game, fireworks pop up, but they should not until all pairs are found
 2. Background on the top and at the bottow are white when scrolling in Google Chrome
 3. Not responsive in Safari on big screen
